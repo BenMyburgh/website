@@ -946,6 +946,14 @@ a {
   margin-top: 70px;
 }
 
+.signal-grid-four {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.signal-grid-four .signal {
+  min-height: 350px;
+}
+
 .signal {
   min-height: 320px;
   padding: 30px;
@@ -1077,6 +1085,161 @@ a {
 
 .cta-panel .button {
   background: var(--white);
+}
+
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.archive-card {
+  min-height: 390px;
+  padding: 34px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.archive-years {
+  color: var(--orange-dark);
+  font: 800 12px "Manrope", sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.archive-card h3 {
+  margin: 58px 0 20px;
+  font: 800 clamp(1.6rem, 3vw, 2.6rem) "Manrope", sans-serif;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+}
+
+.archive-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4a5960;
+}
+
+.archive-card li + li {
+  margin-top: 8px;
+}
+
+.contact-band {
+  padding: 90px 0;
+  color: var(--ink);
+  background: var(--sky);
+}
+
+.contact-band-inner {
+  width: var(--page);
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 70px;
+  align-items: end;
+}
+
+.contact-band h2 {
+  margin: 0;
+  font: 800 clamp(2.8rem, 6vw, 6rem) "Manrope", sans-serif;
+  letter-spacing: -0.065em;
+  line-height: 0.95;
+}
+
+.contact-band p:not(.eyebrow) {
+  margin-bottom: 0;
+  color: #3c5058;
+}
+
+.contact-band .text-link {
+  justify-self: end;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.history-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.history-item {
+  display: grid;
+  padding: 34px 0;
+  grid-template-columns: 0.45fr 1.55fr;
+  gap: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.history-item > span {
+  color: var(--orange);
+  font: 800 13px "Manrope", sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.history-item h3 {
+  margin: 0 0 8px;
+  font: 800 clamp(1.55rem, 3vw, 2.5rem) "Manrope", sans-serif;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.history-item p {
+  max-width: 760px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.aircraft-section {
+  padding-top: 0;
+}
+
+.story-page {
+  padding-top: 170px;
+}
+
+.story-pillars {
+  display: grid;
+  margin-top: 70px;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.story-pillars a {
+  min-height: 240px;
+  display: flex;
+  padding: 28px;
+  flex-direction: column;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.story-pillars a:hover {
+  color: var(--white);
+  background: var(--ink);
+}
+
+.story-pillars span {
+  color: var(--orange-dark);
+  font: 800 12px "Manrope", sans-serif;
+}
+
+.story-pillars strong {
+  margin-top: auto;
+  font: 800 2rem "Manrope", sans-serif;
+  letter-spacing: -0.05em;
+}
+
+.story-pillars small {
+  margin-top: 5px;
+  color: #607077;
+  line-height: 1.45;
+}
+
+.story-pillars a:hover small {
+  color: rgba(255, 255, 255, 0.62);
 }
 
 .error-page {
@@ -1242,6 +1405,30 @@ a {
   .signal-grid,
   .case-grid {
     grid-template-columns: 1fr;
+  }
+
+  .signal-grid-four,
+  .archive-grid,
+  .story-pillars,
+  .contact-band-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-card {
+    min-height: auto;
+  }
+
+  .contact-band-inner {
+    gap: 34px;
+  }
+
+  .contact-band .text-link {
+    justify-self: start;
+  }
+
+  .history-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .signal {

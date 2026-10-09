@@ -758,10 +758,29 @@ a {
 }
 
 .page-hero.flying-hero {
-  position: relative;
-  background:
-    linear-gradient(90deg, rgba(12, 19, 23, 0.93), rgba(12, 19, 23, 0.31)),
-    url("/assets/images/aircraft-ramp.jpg") center 53% / cover;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
+  gap: clamp(28px, 4vw, 64px);
+  padding: 132px max(24px, calc((100vw - 1180px) / 2)) 70px;
+  align-items: center;
+}
+
+.flying-hero .page-hero-inner {
+  grid-column: 1;
+  grid-row: 1;
+  width: auto;
+  margin: 0;
+}
+
+.flying-hero h1 {
+  font-size: clamp(3rem, 4.5vw, 5rem);
+}
+
+.flying-hero-photo {
+  grid-column: 2;
+  grid-row: 1;
+  height: auto;
+  border-radius: 4px;
+  filter: brightness(1.05) contrast(1.02) saturate(1.03);
 }
 
 .page-hero.trip-hero {
@@ -1281,6 +1300,26 @@ a {
     height: 70px;
   }
 
+  .page-hero.flying-hero {
+    min-height: auto;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding: 108px max(17px, calc((100vw - 680px) / 2)) 54px;
+  }
+
+  .flying-hero-photo {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .flying-hero .page-hero-inner {
+    grid-row: 2;
+  }
+
+  .flying-hero h1 {
+    font-size: clamp(3rem, 9vw, 5rem);
+  }
+
   .menu-toggle {
     display: block;
   }
@@ -1307,20 +1346,22 @@ a {
   }
 
   .hero {
-    min-height: 860px;
+    min-height: auto;
+    display: block;
   }
 
   .hero::after {
-    background: linear-gradient(0deg, rgba(8, 15, 18, 0.96), rgba(8, 15, 18, 0.15) 88%);
+    display: none;
   }
 
   .hero-photo {
-    object-position: 78% 50%;
+    position: relative;
+    height: auto;
+    padding-top: 70px;
   }
 
   .hero-inner {
-    padding: 330px 0 150px;
-    align-self: end;
+    padding: 40px 0 130px;
   }
 
   .hero h1 {
@@ -1454,12 +1495,8 @@ a {
 }
 
 @media (max-width: 470px) {
-  .hero {
-    min-height: 780px;
-  }
-
   .hero-inner {
-    padding-top: 280px;
+    padding-bottom: 48px;
   }
 
   .hero-stats {
